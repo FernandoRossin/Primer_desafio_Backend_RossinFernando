@@ -33,16 +33,17 @@ class ProductManager{
     }
     getProducts = () => {
         if (this.products.length === 0) {
-            return console.log(this.products);
+            return this.products;
+
         } else {
-            console.log(this.products);
+            return this.products;
         }
     }
     getProductById = (id) => {
 
         const prodID = this.products.find(p => p.id === id)
         if(prodID){
-            console.log(prodID);
+            return prodID
         }else{
             console.log("Not found");
         }
@@ -53,7 +54,6 @@ class ProductManager{
 
 const app = new ProductManager()
 
-
 app.getProducts()
 
 app.addProduct("producto prueba","Este es un producto prueba",200,"sin imagen","abc123",25)
@@ -61,9 +61,8 @@ app.addProduct("producto prueba","Este es un producto prueba",200,"sin imagen","
 app.getProducts()
 
 app.addProduct("producto prueba","Este es un producto prueba",200,"sin imagen","abc123",25)
-
-app.getProductById(4)
 
 app.getProductById(1)
+
 
 
